@@ -1,0 +1,11 @@
+﻿Sub aceeași stea,John Green,dragoste,true
+Tuturor băieților pe care i-am iubit,Jenny Han,dragoste,false
+Divergent,Veronica Roth,sf,true
+Codul lui Da Vinci,Dan Brown,mister,true
+Fata cu vise alb negru,Andreea Russo,mister,false
+Prima iubire,James Patterson,dragoste,true
+Pecetea Mortii,Veronica Roth,sf,false
+Insurgent,Veronica Roth,sf,true
+Fata din tren,Paula Hawkins,mister,true
+Infernul,Dan Brown,mister,true
+Oamenii fericiți citesc și beau cafea,Agnes Martin-Lugand,dragoste,false

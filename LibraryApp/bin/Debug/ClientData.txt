@@ -1,0 +1,6 @@
+﻿Ruxandra Baros,ruxandra@gmail.com,true,0
+Jorge Blanco,jorge@yahoo.com,true,1
+Tristan Miles,tristan@milesmedia.com,true,3
+Maria Hill,maria@shield.com,false,2
+Grant Ward,gward@gmail.com,true,1
+Andreea Popa,apopa@yahoo.com,false,0
