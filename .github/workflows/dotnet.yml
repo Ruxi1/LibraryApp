@@ -34,9 +34,12 @@ jobs:
     - name: Build solution
       run: msbuild LibraryApp.sln /p:Configuration=Release
 
+    - name: Install VSTest platform
+      uses: darenm/Setup-VSTest@v1
+
     - name: Run unit tests
       run: |
-        vstest.console.exe LibraryAppTests\bin\Release\LibraryAppTests.dll
+        vstest.console LibraryAppTests\bin\Release\LibraryAppTests.dll
 
     - name: Simple Deployment 
       run: |
