@@ -1,0 +1,44 @@
+# This workflow will build a .NET project
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-net
+
+name: CI - Build, Test, Deploy
+
+on:
+  push:
+    branches: [ "master" ]
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: 8.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+    - name: Setup MSBuild
+      uses: microsoft/setup-msbuild@v1.1
+
+    - name: Setup NuGet
+      uses: NuGet/setup-nuget@v1.2.0
+
+    - name: Restore NuGet packages
+      run: nuget restore LibraryApp.sln
+
+    - name: Build solution
+      run: msbuild LibraryApp.sln /p:Configuration=Release
+
+    - name: Run unit tests
+      run: |
+        vstest.console.exe LibraryAppTests\bin\Release\LibraryAppTests.dll
+
+    - name: Simple Deployment 
+      run: |
+        mkdir D:\temp\deployment
+        xcopy LibraryApp\bin\Release\* D:\temp\deployment /s /y
